@@ -80,8 +80,33 @@ public interface FeatureStoreIO<T> extends PTransform<PCollection<T>, PCollectio
 1. **Week 1: Core Embedding Infrastructure**
    - Implement OpenAI embeddings PTransform
    - Add batch processing for efficient API usage
-   - Implement caching mechanism
    - Add error handling and retry logic
+```python
+class OpenAIEmbeddings(EmbeddingsManager):
+    def __init__(
+        self,
+        model_name: str,
+        columns: list[str],
+        api_key: str,
+        organization: Optional[str] = None,
+        **kwargs):
+        """
+        Embedding Config for OpenAI embedding models.
+        Text embeddings are generated for a batch of text using the OpenAI API.
+        Embeddings are returned in a list for each text in the batch.
+
+        Args:
+            model_name: The name of the OpenAI embedding model (e.g. 'text-embedding-ada-002')
+            columns: The columns containing the text to be embedded
+            api_key: OpenAI API key
+            organization: Optional organization ID for OpenAI API
+        """
+        self.model_name = model_name
+        self.api_key = api_key
+        self.organization = organization
+        super().__init__(columns=columns, **kwargs)
+
+```
 
 2. **Weeks 2-4: Vector DB Integration**
    - Implement Pinecone and Weaviate connectors
@@ -103,8 +128,8 @@ public interface FeatureStoreIO<T> extends PTransform<PCollection<T>, PCollectio
 
 ### TIMELINE AND COMMITMENTS
 
-I will dedicate 30-35 hours per week to the project:
-- Weekdays: 4-5 hours per day
+I will dedicate 40-45 hours per week to the project:
+- Weekdays: 6-7 hours per day
 - Weekends: Additional hours for complex tasks
 - Regular communication with mentors during their working hours
 
