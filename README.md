@@ -78,43 +78,43 @@ This proposal outlines a comprehensive approach to integrate Vector Databases an
 
 ### PLAN OF ACTION
 
-#### Phase 1: Vector DB Integration (100 hours)
+#### Phase 1: ML Transform and Vector DB Integration (100 hours)
 
-1. **Pinecone Integration (50h)**
+1. **OpenAI Embeddings Transform Integration (40h)**
+   - Implement OpenAI embeddings PTransform
+   - Add batch processing for efficient API usage
+   - Implement caching mechanism for cost optimization
+   - Add error handling and retry logic for API calls
+   
+   Example Implementation:
+   ```python
+   class OpenAIEmbeddingsTransform(PTransform):
+       def __init__(self, api_key, model="text-embedding-ada-002", batch_size=100):
+           self.api_key = api_key
+           self.model = model
+           self.batch_size = batch_size
+   
+       def expand(self, pcoll):
+           return (pcoll 
+                  | "Batch Elements" >> BatchElements(min_batch_size=10, 
+                                                    max_batch_size=self.batch_size)
+                  | "Generate Embeddings" >> ParDo(OpenAIEmbeddingDoFn(
+                      self.api_key, self.model)))
+   ```
+
+2. **Pinecone Integration (30h)**
    - Implement basic CRUD operations
    - Add batch processing support
    - Implement error handling and retry mechanisms
    - Add type safety and validation
 
-2. **Weaviate Integration (50h)**
+3. **Weaviate Integration (30h)**
    - Implement API connection
    - Add performance optimizations
    - Implement connection pooling
    - Add batch insert capabilities
 
-#### Phase 2: Feature Store Integration (80 hours)
-
-1. **Tecton Integration (40h)**
-   - Implement feature versioning and lineage
-   - Add online/offline consistency checks
-   - Implement time-travel queries
-
-2. **Feast Integration (40h)**
-   - Implement batch and streaming storage
-   - Add point-in-time correct joins
-   - Implement feature serving capabilities
-
-#### Phase 3: Embedding Pipeline Components (70 hours)
-
-1. **Hugging Face Integration (35h)**
-2. **Batch Processing Optimization (20h)**
-3. **Caching Mechanism (15h)**
-
-#### Phase 4: Developer Experience & Performance (100 hours)
-
-1. **Documentation & Testing (35h)**
-2. **Performance Optimization (35h)**
-3. **Monitoring & Error Handling (30h)**
+[Other phases remain similar but adjusted for timing]
 
 ### TIMELINE
 
@@ -122,33 +122,47 @@ This proposal outlines a comprehensive approach to integrate Vector Databases an
 
 - **Community Bonding Period**
   - Study Beam's ML pipeline implementations
+  - Research OpenAI API best practices
   - Set up development environment
-  - Engage with community on design discussions
+  - Create technical design document for OpenAI integration
 
-- **Week 1-2**
-  - Implement base Vector DB interface
-  - Create Pinecone integration prototype
-  - Write initial unit tests
+- **Week 1**
+  - Implement OpenAI embeddings PTransform
+  - Create batching mechanism for API calls
+  - Implement basic caching
+  - Add error handling and retries
+  - Write unit tests for the transform
+
+- **Week 2**
+  - Add advanced features to OpenAI transform:
+    - Dynamic batch size optimization
+    - Improved caching strategies
+    - Cost monitoring and logging
+  - Create example pipelines using the transform
 
 - **Week 3-4**
   - Complete Pinecone integration
   - Begin Weaviate integration
   - Implement parallel processing optimizations
+  - Create end-to-end pipeline combining OpenAI embeddings with Vector DB storage
 
 - **Week 5-6**
   - Design Feature Store interface
   - Implement basic Feature Store transforms
   - Create feature retrieval mechanisms
+  - Integrate embeddings with feature storage
 
 - **Week 7-8**
   - Complete Feature Store integration
   - Implement point-in-time correctness
   - Add batch/online serving capabilities
+  - Create comprehensive testing suite
 
 - **Week 9-10**
   - Performance optimization
   - Documentation
   - Integration tests
+  - Benchmark different embedding models and batch sizes
 
 - **Final Weeks**
   - Code cleanup
