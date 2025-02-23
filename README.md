@@ -1,32 +1,29 @@
-# Project Proposal
+# Project Proposal: Integrating Vector DB and Feature Store Capabilities into Apache Beam
 
-## Integrating Vector DB and Feature Store Capabilities into Apache Beam
+## PERSONAL INFORMATION
 
-- **Organisation**: Apache Software Foundation
-- **Project**: Apache Beam
-- **Applicant**: Aditya Yadav
-
-# PERSONAL INFORMATION
-
-## CONTACT INFORMATION
-
+### CONTACT INFORMATION
 - **NAME**: Aditya Yadav
 - **EMAIL**: adiworkprofile@gmail.com
 - **PHONE**: +91-8920735656
 - **LOCATION**: New Delhi, Delhi, India
 - **ADDRESS**: B2A Patel Garden, Delhi, 110059
 
-## STUDENT AFFILIATION
-
+### STUDENT AFFILIATION
 - **UNIVERSITY**: Indian Institute of Technology Madras
 - **DEGREE**: Bachelor's in Data Science and Mathematics
 - **GRADUATION**: [Expected Year]
 
-## BRIEF BIO
+### BRIEF BIO
 
-I am a Software Engineer at AcutusAI Private Insight Ltd with a strong background in Data Science and Mathematics. My experience includes both professional work and open source contributions, particularly to Apache projects. I have actively contributed to Apache Airflow with 10+ contributions and 5+ merged PRs, while also maintaining involvement in Apache ZooKeeper and Maven projects.
+I am a Software Engineer at AcutusAI Private Insight Ltd with a strong background in Data Science and Mathematics. My experience spans both professional work and open source contributions, particularly to Apache projects. I have actively contributed to Apache Airflow with 10+ contributions and 5+ merged PRs, while also maintaining involvement in Apache ZooKeeper and Maven projects.
 
-Through my professional work at AcutusAI, I've gained practical experience in implementing ML systems and distributed services. I've been instrumental in developing a synthetic data platform, QMAPI service using Generative AI, and a RAG-based chatbot system. Additionally, I've led the development of Opinomea, a survey panel serving 100k+ users.
+Through my professional work at AcutusAI, I've gained practical experience in implementing ML systems and distributed services. I've been instrumental in:
+- Developing a synthetic data platform
+- Building QMAPI service using Generative AI
+- Creating a RAG-based chatbot system
+- Leading the development of Opinomea (100k+ users)
+- Generating significant revenue through survey panel implementation
 
 # PROJECT DESCRIPTION
 
@@ -38,7 +35,7 @@ The project aims to extend Apache Beam's ML capabilities by integrating Vector D
 
 Modern ML systems heavily rely on vector embeddings and feature management for efficient similarity search, recommendation systems, and ML model serving. While Apache Beam excels at data processing, it currently lacks native integration with Vector Databases and Feature Stores. This gap creates friction in ML workflows, requiring developers to build custom solutions or manage complex pipelines across multiple systems.
 
-The need for this integration is driven by several factors:
+The need for this integration is driven by:
 - Growing adoption of vector-based similarity search in ML applications
 - Increasing importance of feature management in ML pipelines
 - Need for efficient handling of high-dimensional data at scale
@@ -48,9 +45,7 @@ The need for this integration is driven by several factors:
 
 ### OVERVIEW
 
-This proposal outlines a comprehensive approach to integrate Vector Databases and Feature Stores with Apache Beam through the following key components:
-
-#### Core Components:
+This proposal outlines a comprehensive approach to integrate Vector Databases and Feature Stores with Apache Beam through two main components:
 
 1. **Vector DB Integration**
    - Abstract interfaces for Vector DB operations
@@ -64,150 +59,66 @@ This proposal outlines a comprehensive approach to integrate Vector Databases an
    - Point-in-time correct feature retrieval
    - Feature versioning and lineage tracking
 
-3. **Embedding Pipeline Components**
-   - Integration with Hugging Face transformers
-   - Batch processing optimizations
-   - Caching mechanisms
+### TECHNICAL DESIGN
 
-#### Technologies
+#### Core Architecture
+```java
+public interface VectorDatabaseIO<T> extends PTransform<PCollection<T>, PDone> {
+    Write<T> write(VectorDBOptions options);
+    Read<T> read(VectorDBQuery query);
+    Delete delete(String[] ids);
+}
 
-- Primary: Java, Python
-- Frameworks: Apache Beam, Vector DBs (Pinecone, Weaviate)
-- Feature Stores: Tecton, Feast
-- ML Libraries: Hugging Face Transformers
+public interface FeatureStoreIO<T> extends PTransform<PCollection<T>, PCollection<FeatureVector>> {
+    FeatureRetrieval<T> getFeatures(FeatureView featureView);
+    FeatureServing<T> serveFeatures(ServingConfig config);
+}
+```
 
-### PLAN OF ACTION
+#### Implementation Phases
 
-#### Phase 1: ML Transform and Vector DB Integration (100 hours)
-
-1. **OpenAI Embeddings Transform Integration (40h)**
+1. **Week 1: Core Embedding Infrastructure**
    - Implement OpenAI embeddings PTransform
    - Add batch processing for efficient API usage
-   - Implement caching mechanism for cost optimization
-   - Add error handling and retry logic for API calls
-   
-   Example Implementation:
-   ```python
-   class OpenAIEmbeddingsTransform(PTransform):
-       def __init__(self, api_key, model="text-embedding-ada-002", batch_size=100):
-           self.api_key = api_key
-           self.model = model
-           self.batch_size = batch_size
-   
-       def expand(self, pcoll):
-           return (pcoll 
-                  | "Batch Elements" >> BatchElements(min_batch_size=10, 
-                                                    max_batch_size=self.batch_size)
-                  | "Generate Embeddings" >> ParDo(OpenAIEmbeddingDoFn(
-                      self.api_key, self.model)))
-   ```
+   - Implement caching mechanism
+   - Add error handling and retry logic
 
-2. **Pinecone Integration (30h)**
-   - Implement basic CRUD operations
-   - Add batch processing support
-   - Implement error handling and retry mechanisms
-   - Add type safety and validation
-
-3. **Weaviate Integration (30h)**
-   - Implement API connection
-   - Add performance optimizations
+2. **Weeks 2-4: Vector DB Integration**
+   - Implement Pinecone and Weaviate connectors
+   - Add batch processing capabilities
    - Implement connection pooling
-   - Add batch insert capabilities
+   - Add performance optimizations
 
-[Other phases remain similar but adjusted for timing]
+3. **Weeks 5-8: Feature Store Integration**
+   - Implement Feast and Tecton integration
+   - Add feature versioning support
+   - Implement point-in-time feature retrieval
+   - Add monitoring and logging
 
-### TIMELINE
+4. **Weeks 9-12: Production Readiness**
+   - Comprehensive testing
+   - Performance optimization
+   - Documentation
+   - Community review
 
-#### Timeline / Milestones
+### TIMELINE AND COMMITMENTS
 
-- **Community Bonding Period**
-  - Study Beam's ML pipeline implementations
-  - Research OpenAI API best practices
-  - Set up development environment
-  - Create technical design document for OpenAI integration
-
-- **Week 1**
-  - Implement OpenAI embeddings PTransform
-  - Create batching mechanism for API calls
-  - Implement basic caching
-  - Add error handling and retries
-  - Write unit tests for the transform
-
-- **Week 2**
-  - Add advanced features to OpenAI transform:
-    - Dynamic batch size optimization
-    - Improved caching strategies
-    - Cost monitoring and logging
-  - Create example pipelines using the transform
-
-- **Week 3-4**
-  - Complete Pinecone integration
-  - Begin Weaviate integration
-  - Implement parallel processing optimizations
-  - Create end-to-end pipeline combining OpenAI embeddings with Vector DB storage
-
-- **Week 5-6**
-  - Design Feature Store interface
-  - Implement basic Feature Store transforms
-  - Create feature retrieval mechanisms
-  - Integrate embeddings with feature storage
-
-- **Week 7-8**
-  - Complete Feature Store integration
-  - Implement point-in-time correctness
-  - Add batch/online serving capabilities
-  - Create comprehensive testing suite
-
-- **Week 9-10**
-  - Performance optimization
-  - Documentation
-  - Integration tests
-  - Benchmark different embedding models and batch sizes
-
-- **Final Weeks**
-  - Code cleanup
-  - Final documentation
-  - Example pipelines
-  - Community review process
-
-#### Commitments
-
-I will dedicate 30-35 hours per week to the project. My typical schedule will be:
+I will dedicate 30-35 hours per week to the project:
 - Weekdays: 4-5 hours per day
-- Weekends: Additional hours for complex tasks and catching up if needed
+- Weekends: Additional hours for complex tasks
 - Regular communication with mentors during their working hours
 
 ### POST GSOC PLANS
 
-I am committed to maintaining and expanding the project beyond GSoC. Future plans include:
+I am committed to maintaining and expanding the project beyond GSoC:
 - Adding support for additional Vector DBs and Feature Stores
 - Implementing streaming support for real-time feature updates
-- Creating comprehensive example pipelines for common ML workflows
+- Creating comprehensive example pipelines
 - Contributing to the broader Apache Beam ML ecosystem
+- Maintaining documentation
+- Supporting community adoption
 
-# Previous Open Source Contributions
-
-1. **Apache Airflow**
-   - 10+ contributions via PRs and issues
-   - 5+ merged PRs
-   - Active daily participation in Slack community
-
-2. **Other Apache Projects**
-   - Contributions to Apache ZooKeeper
-   - Documentation improvements for Apache Maven
-   - Active participation in community discussions
-
-# Professional Experience
-
-Currently working as a Software Engineer at AcutusAI Private Insight Ltd, where I:
-- Developed a synthetic data platform
-- Built QMAPI service using Generative AI
-- Created a RAG-based chatbot system
-- Led development of Opinomea (100k+ users)
-- Generated significant revenue through survey panel implementation
-
-# Communication Plan
-
+### COMMUNICATION PLAN
 - Primary communication via Slack and email
 - Regular updates on dev mailing list
 - Weekly sync-ups with mentors
