@@ -12,7 +12,7 @@
 ### STUDENT AFFILIATION
 - **UNIVERSITY**: Indian Institute of Technology Madras
 - **DEGREE**: Bachelor's in Data Science and Mathematics
-- **GRADUATION**: [Expected Year]
+- **GRADUATION**: 2026
 
 ### BRIEF BIO
 
