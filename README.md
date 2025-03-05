@@ -8,7 +8,6 @@
 - **Phone**: +91-8920735656
 - **Location**: New Delhi, Delhi, India
 - **GitHub**: [Your GitHub Username]
-- **LinkedIn**: [Your LinkedIn Profile]
 
 ### Student Affiliation
 - **University**: Indian Institute of Technology Madras
@@ -18,132 +17,212 @@
 ## Project Details
 
 ### Project Title
-Expanding Apache Beam's Vector Database and Feature Store Sink Capabilities
+**Apache Beam I/O Connectors for Feature Stores and Vector Databases**
 
-### Timeline
+### Project Overview
+This project aims to develop a suite of Apache Beam I/O Connectors to integrate with various feature stores and vector databases, including:
+1. Feast Feature Store
+2. Vertex AI Feature Store
+3. Pinecone Vector Database
+4. Tecton Feature Store
+5. Amazon SageMaker
 
-| Phase | Weeks | Focus Area | Specific Tasks |
-|-------|-------|------------|----------------|
-| Phase 1 | Weeks 1-2 | Initial Setup & Feast Integration | - Project setup and environment configuration<br>- Sink implementation for Feast Feature Store<br>- Basic testing and validation |
-| Phase 2a | Weeks 3-4 | Vertex AI Feature Store | - Sink implementation for Vertex AI<br>- Comprehensive testing<br>- Performance initial benchmarking |
-| Phase 2b | Weeks 5-6 | Tecton Feature Store | - Detailed sink handler development<br>- Enrichment handler initial implementation<br>- Integration testing |
-| Phase 3a | Weeks 7-8 | Pinecone Vector Database | - Sink handler implementation<br>- Performance optimization<br>- Comprehensive testing |
-| Phase 3b | Weeks 9-10 | Amazon SageMaker | - Sink and enrichment handler development<br>- Integration and compatibility testing<br>- Performance tuning |
-| Final Phase | Weeks 11-12 | Documentation & Final Refinement | - Comprehensive documentation<br>- Final performance benchmarking<br>- Prepare for upstream contribution |
+### Motivation
+- Extend Apache Beam's data integration capabilities
+- Provide seamless connectivity for machine learning workflows
+- Standardize I/O operations across different feature stores and vector databases
 
-### Detailed Phase Descriptions
+### Project Scope
 
-#### Phase 1: Initial Setup and Feast Feature Store Integration (Weeks 1-2)
-**Objectives:**
-- Set up the development environment for Apache Beam extensions
-- Develop a robust sink handler for Feast Feature Store
-- Establish initial testing framework
+## Phase 1: Feast Feature Store Connector (Weeks 1-2)
+### Objectives
+- Develop the foundational implementation of Feast Feature Store I/O Connector.
+- Implement basic read and write operations.
+- Establish a robust authentication mechanism.
+- Set up a comprehensive testing framework.
 
-**Key Deliverables:**
-- Configured development environment
-- Basic sink implementation for Feast
-- Initial test suite
-- Preliminary documentation of integration approach
+### Detailed Tasks
+1. **Connector Architecture Design**
+   - Define the structure of the connector in accordance with Apache Beam's guidelines.
+   - Set up project dependencies and configurations.
+   
+2. **Authentication and Connection Handling**
+   - Implement authentication mechanisms, including API keys and OAuth.
+   - Develop secure connection handling and connection pooling mechanisms.
+   
+3. **Read Operations**
+   - Implement feature retrieval methods.
+   - Ensure compatibility with different feature store schemas.
+   
+4. **Write Operations**
+   - Implement feature ingestion into Feast.
+   - Ensure efficient batch processing and streaming support.
+   
+5. **Testing and Validation**
+   - Develop unit tests for all functionalities.
+   - Create integration tests with mock feature store instances.
 
-**Technical Challenges:**
-- Understanding Feast's API and integration points
-- Designing a flexible sink handler that can handle various data types
-- Implementing efficient data transfer mechanisms
+### Challenges
+- Understanding Feast's feature retrieval mechanisms.
+- Handling schema variations and configurations.
+- Optimizing performance for large-scale feature stores.
 
-#### Phase 2a: Vertex AI Feature Store Integration (Weeks 3-4)
-**Objectives:**
-- Implement a comprehensive sink handler for Vertex AI Feature Store
-- Develop advanced testing strategies
-- Conduct initial performance benchmarking
+---
 
-**Key Deliverables:**
-- Fully functional Vertex AI Feature Store sink
-- Comprehensive test coverage
-- Initial performance metrics
-- Detailed integration documentation
+## Phase 2: Vertex AI Feature Store Connector (Weeks 3-4)
+### Objectives
+- Implement a robust I/O connector for Vertex AI Feature Store.
+- Develop advanced feature retrieval and storage mechanisms.
+- Optimize performance and ensure seamless integration with Apache Beam.
 
-**Technical Challenges:**
-- Handling different feature types in Vertex AI
-- Managing authentication and access controls
-- Optimizing data transfer performance
+### Detailed Tasks
+1. **Connector Completion**
+   - Finalize pending work from the Feast connector.
+   - Implement full read and write capabilities for Vertex AI Feature Store.
+   
+2. **Advanced Feature Handling**
+   - Support feature versioning and time-travel queries.
+   - Implement efficient feature retrieval mechanisms.
+   
+3. **Performance Optimization**
+   - Develop caching and batching strategies.
+   - Optimize connection handling for large datasets.
+   
+4. **Testing and Validation**
+   - Create integration tests covering different scenarios.
+   - Benchmark performance against various workloads.
 
-#### Phase 2b: Tecton Feature Store Integration (Weeks 5-6)
-**Objectives:**
-- Develop sink and enrichment handlers for Tecton
-- Implement advanced feature management capabilities
-- Create robust integration testing
+### Challenges
+- Navigating Vertex AI's complex API.
+- Handling large-scale ML feature stores efficiently.
+- Ensuring compatibility with Apache Beam's pipeline processing.
 
-**Key Deliverables:**
-- Sink handler for Tecton Feature Store
-- Initial enrichment handler
-- Advanced integration tests
-- Performance optimization strategies
+---
 
-**Technical Challenges:**
-- Implementing feature versioning and management
-- Creating flexible enrichment mechanisms
-- Ensuring compatibility with different data workflows
+## Phase 3: Tecton Feature Store Connector (Weeks 5-6)
+### Objectives
+- Implement I/O connectivity for Tecton Feature Store.
+- Support feature versioning and schema evolution.
+- Optimize performance for high-throughput feature retrieval.
 
-#### Phase 3a: Pinecone Vector Database Integration (Weeks 7-8)
-**Objectives:**
-- Implement sink handler for Pinecone Vector Database
-- Develop high-performance vector data writing capabilities
-- Optimize data transfer and indexing
+### Detailed Tasks
+1. **Connector Development**
+   - Implement read and write operations.
+   - Develop robust configuration management for Tecton.
+   
+2. **Feature Management**
+   - Support schema evolution and backward compatibility.
+   - Implement data validation mechanisms.
+   
+3. **Testing and Validation**
+   - Develop unit and integration tests.
+   - Conduct load testing for performance evaluation.
 
-**Key Deliverables:**
-- Fully functional Pinecone vector sink
-- Performance-optimized data writing mechanisms
-- Comprehensive testing suite
-- Vector data management strategies
+### Challenges
+- Understanding Tecton’s feature management system.
+- Handling schema changes efficiently.
+- Ensuring consistent performance at scale.
 
-**Technical Challenges:**
-- Handling high-dimensional vector data
-- Implementing efficient batching mechanisms
-- Ensuring low-latency vector indexing
+---
 
-#### Phase 3b: Amazon SageMaker Integration (Weeks 9-10)
-**Objectives:**
-- Develop sink and enrichment handlers for SageMaker
-- Implement advanced ML model integration capabilities
-- Create comprehensive testing and validation strategies
+## Phase 4: Pinecone Vector Database Connector (Weeks 7-8)
+### Objectives
+- Develop an I/O Connector for Pinecone Vector Database.
+- Implement efficient vector storage and retrieval mechanisms.
+- Optimize indexing and query performance.
 
-**Key Deliverables:**
-- Sink handler for model training data
-- Enrichment handler for model predictions
-- Integration and compatibility tests
-- Performance tuning documentation
+### Detailed Tasks
+1. **Vector Data Handling**
+   - Implement storage mechanisms for high-dimensional vectors.
+   - Develop efficient vector search and similarity matching operations.
+   
+2. **Performance Optimization**
+   - Implement batch processing for large-scale vector data.
+   - Develop caching strategies for frequently queried vectors.
+   
+3. **Testing and Validation**
+   - Create benchmark tests for vector search performance.
+   - Validate connector functionality with real-world datasets.
 
-**Technical Challenges:**
-- Managing different ML model input formats
-- Implementing seamless prediction enrichment
-- Handling various SageMaker deployment scenarios
+### Challenges
+- Managing high-dimensional vector data efficiently.
+- Ensuring low-latency vector retrieval.
+- Optimizing search and indexing operations.
 
-#### Final Phase: Documentation and Refinement (Weeks 11-12)
-**Objectives:**
-- Comprehensive documentation of all integrations
-- Final performance benchmarking
-- Prepare for upstream contribution to Apache Beam
+---
 
-**Key Deliverables:**
-- Detailed project documentation
-- Performance comparison reports
-- Contribution guidelines
-- Presentation materials for Apache Beam community
+## Phase 5: Amazon SageMaker Connector (Weeks 9-10)
+### Objectives
+- Develop I/O Connector for Amazon SageMaker.
+- Support model training data management and inference workflows.
+- Ensure seamless integration with Apache Beam pipelines.
 
-**Technical Challenges:**
-- Creating clear, concise documentation
-- Summarizing complex integration approaches
-- Preparing for community review and feedback
+### Detailed Tasks
+1. **Model Data Management**
+   - Implement storage and retrieval mechanisms for training data.
+   - Support multiple data formats used in ML models.
+   
+2. **Inference and Deployment Integration**
+   - Develop mechanisms to integrate trained models into Apache Beam workflows.
+   - Implement data transformation for model input and output.
+   
+3. **Testing and Validation**
+   - Develop test suites covering different ML workloads.
+   - Benchmark performance and ensure robustness.
 
-### Conclusion and Expected Impact
-This project aims to significantly enhance Apache Beam's capabilities by providing robust, efficient, and flexible sink and enrichment handlers for leading feature stores and vector databases. The implementation will address critical gaps in current data processing and machine learning infrastructure, offering developers more powerful tools for building advanced data pipelines.
+### Challenges
+- Navigating SageMaker's complex ecosystem.
+- Handling diverse ML model formats and workflows.
+- Optimizing data transfer for high-performance inference.
 
-### Personal Commitment
-- 35-40 hours per week dedicated to project
-- Regular communication with mentors
-- Transparent and collaborative development process
+---
 
-### Community Engagement
-- Active participation in Apache Beam community channels
-- Open-source contribution
-- Transparent development process
+## Final Phase: Documentation and Refinement (Weeks 11-12)
+### Objectives
+- Prepare comprehensive documentation and examples.
+- Finalize performance optimizations.
+- Contribute the developed connectors upstream to Apache Beam.
+
+### Detailed Tasks
+1. **Documentation**
+   - Develop detailed guides for using each connector.
+   - Create usage examples and API references.
+   
+2. **Performance Refinement**
+   - Conduct final optimizations based on testing results.
+   - Fix any identified bottlenecks.
+   
+3. **Community Contribution**
+   - Prepare documentation for Apache Beam upstream submission.
+   - Engage with the community to ensure acceptance.
+
+---
+
+## Expected Outcomes
+1. Fully functional I/O connectors for the specified platforms.
+2. Comprehensive test suites ensuring reliability.
+3. Performance benchmarking and optimization.
+4. Well-documented guides for developers and users.
+5. Upstream contribution to Apache Beam.
+
+---
+
+## Technical Skills
+- **Programming Languages**: Python, Java
+- **Frameworks & Tools**: Apache Beam, Feast, Vertex AI, Pinecone, SageMaker
+- **Distributed Computing Principles**
+- **API Development & Integration**
+
+## Development Approach
+- Follow Apache Beam’s I/O connector development guidelines.
+- Implement best practices for scalability and performance.
+- Ensure compatibility with different ML feature stores and vector databases.
+
+## Community Engagement
+- Active participation in Apache Beam development channels.
+- Regular progress updates to mentors and community.
+- Open-source contribution and collaboration.
+
+## Conclusion
+This project will significantly enhance Apache Beam’s ecosystem by providing robust, standardized I/O connectors for critical machine learning infrastructure, enabling seamless data processing workflows.
+
