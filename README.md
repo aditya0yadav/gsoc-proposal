@@ -73,7 +73,7 @@ This project aims to develop Apache Beam I/O connectors for various feature stor
 |----------------|------------|-----------------------------------------------------|------------|
 | **Phase 1**    | Week 1     | Feast Feature Store Integration                     | - Implement Feast Sink Connector <br> - Unit testing and validation |
 | **Phase 2**    | Week 2     | Vertex AI Feature Store Integration                | - Implement Sink Connector for Vertex AI <br> - Conduct integration testing <br> - Performance benchmarking |
-| **Phase 3**    | Weeks 3-5  | Tecton Feature Store Integration                   | - Develop Source & Sink Connectors for Tecton <br> - Implement enrichment handlers <br> - Run end-to-end integration tests |
+| **Phase 3**    | Weeks 3-5  | Tecton Feature Store Integration                   | - Develop Source(Enrichment handler) & Sink Connectors for Tecton <br> - - Run end-to-end integration tests |
 | **Phase 4**    | Weeks 6-7  | Pinecone Vector Database Integration              | - Develop Source & Sink Connectors <br> - Optimize performance for high-dimensional data <br> - Conduct load testing |
 | **Phase 5**    | Weeks 8-10 | Amazon SageMaker Feature Store Integration        | - Implement Source & Sink Connectors <br> - Ensure compatibility with Beam’s API <br> - Conduct validation testing |
 | **Final Phase**| Weeks 11-12| Documentation & Final Refinement                  | - Write comprehensive documentation <br> - Perform final optimizations <br> - Contribute code to Apache Beam upstream |
