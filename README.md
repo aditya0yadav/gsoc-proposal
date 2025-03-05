@@ -21,8 +21,8 @@
 
 ### Project Overview
 This project aims to develop a suite of Apache Beam I/O Connectors to integrate with various feature stores and vector databases, including:
-1. Feast Feature Store
-2. Vertex AI Feature Store
+1. Feast Feature Store (Sink Implementation)
+2. Vertex AI Feature Store (Sink Implementation)
 3. Pinecone Vector Database
 4. Tecton Feature Store
 5. Amazon SageMaker
