@@ -1,4 +1,4 @@
-# Project Proposal: Integrating Vector DB and Feature Store Capabilities into Apache Beam
+# GSoC 2024 Project Proposal
 
 ## Personal Information
 
@@ -7,123 +7,96 @@
 - **Email**: adiworkprofile@gmail.com
 - **Phone**: +91-8920735656
 - **Location**: New Delhi, Delhi, India
-- **Address**: B2A Patel Garden, Delhi, 110059
+- **GitHub**: [Your GitHub Username]
+- **LinkedIn**: [Your LinkedIn Profile]
 
 ### Student Affiliation
 - **University**: Indian Institute of Technology Madras
 - **Degree**: Bachelor's in Data Science and Mathematics
-- **Graduation**: 2026
+- **Expected Graduation**: 2026
 
-### Brief Bio
-I am a Software Engineer at AcutusAI Private Insight Ltd with a strong background in Data Science and Mathematics. My experience spans both professional work and open source contributions, particularly to Apache projects. I have actively contributed to Apache Airflow with 10+ contributions and 5+ merged PRs, while also maintaining involvement in Apache ZooKeeper and Maven projects.
+## Project Details
 
-## Project Description
+### Project Title
+Expanding Apache Beam's Vector Database and Feature Store Sink Capabilities
 
-### Abstract
-The project aims to extend Apache Beam's ML capabilities by integrating Vector Databases and Feature Stores, enabling efficient storage, retrieval, and processing of high-dimensional vectors and ML features. This integration will bridge the gap between Beam's powerful data processing capabilities and modern ML infrastructure requirements, facilitating more efficient ML workflows within the Beam ecosystem.
+### Project Summary
+Enhance Apache Beam by developing comprehensive sink and enrichment handlers for vector databases and feature stores, focusing on improving data integration and machine learning workflow capabilities.
 
-### Background
-Modern ML systems heavily rely on vector embeddings and feature management for efficient similarity search, recommendation systems, and ML model serving. While Apache Beam excels at data processing, it currently lacks native integration with Vector Databases and Feature Stores. This gap creates friction in ML workflows, requiring developers to build custom solutions or manage complex pipelines across multiple systems.
+### Motivation
 
-**How Apache Beam Works** (Quick Recap)
-Apache Beam has two main parts when dealing with data:
-1. **Sources** – Read data from somewhere (Feast, Vertex AI, databases, etc.).
-2. **Sinks** – Write data to somewhere (databases, APIs, feature stores, etc.).
-Right now, **Apache Beam can only read from Feast and Vertex AI Feature Store**, but we need a **sink** to **write data back**.
+#### Why This Project?
+1. Current limitations in Apache Beam's data sink capabilities for vector databases and feature stores
+2. Growing need for seamless integration between data processing pipelines and advanced ML infrastructure
+3. Opportunity to contribute to an open-source project critical for machine learning ecosystems
 
-**What You Will Build**
-🔧 **A new sink for Apache Beam that:** 
-✅ Takes processed data from Apache Beam. 
-✅ Writes this data back into **Feast** and **Vertex AI Feature Store**. 
-✅ Works efficiently (batching data instead of sending one by one).
+### Detailed Description
 
-## Code Reference Placeholders
+#### Project Scope
+The project aims to implement sink and enrichment handlers for:
 
-### Pinecone Sink Implementation
-```python
-# [PLACEHOLDER FOR PINECONE SINK IMPLEMENTATION]
-# Code will include:
-# - Initialization of Pinecone connection
-# - Batch vector upsert method
-# - Apache Beam sink integration
-```
+**Priority 1 (Phase 2 Implementation):**
+1. Tecton
+2. Pinecone
+3. Amazon SageMaker
 
-### Tecton Feature Enrichment
-```python
-# [PLACEHOLDER FOR TECTON FEATURE ENRICHMENT]
-# Code will include:
-# - Feature service connection
-# - Feature retrieval method
-# - Apache Beam enrichment transformation
-```
+**Secondary Priorities:**
+- Chroma
+- Milvus
+- FAISS
 
-### Chroma Vector Database Handler
-```python
-# [PLACEHOLDER FOR CHROMA VECTOR DATABASE HANDLER]
-# Code will include:
-# - Chroma client initialization
-# - Vector storage and retrieval methods
-# - Integration with Apache Beam pipeline
-```
+#### Key Objectives
+1. Develop robust sink handlers for feature stores and vector databases
+2. Create efficient data writing mechanisms
+3. Implement batch processing optimizations
+4. Ensure compatibility with Apache Beam's existing architecture
 
-## Integration Priorities
+### Technical Skills
 
-### Primary Integrations
-1. **Pinecone**: A fully managed vector database service designed for real-time applications
-2. **Tecton**: A feature platform that enables teams to build, manage, and serve machine learning features
-3. **SageMaker**: Amazon's fully managed service for building, training, and deploying machine learning models
+#### Programming Languages
+- Python (Advanced)
+- Java
+- Golang
 
-### Secondary Integrations
-4. **Chroma**: An open-source vector database optimized for AI applications
-5. **Milvus**: An open-source vector database designed for scalable similarity search
-6. **FAISS**: A library for efficient similarity search and clustering of dense vectors
+#### Relevant Technologies
+- Apache Beam
+- Vector Databases
+- Feature Stores
+- Distributed Computing
+- Machine Learning Infrastructure
 
-## Implementation Approach
+### Timeline
 
-### Design Principles
-- Create abstract interfaces for Vector DB operations
-- Develop efficient batch processing mechanisms
-- Implement robust error handling and retry strategies
-- Ensure seamless integration with existing Apache Beam workflows
+| Phase | Weeks | Focus Area | Specific Tasks |
+|-------|-------|------------|----------------|
+| Phase 1 | Weeks 1-2 | Initial Setup & Feast Integration | - Project setup and environment configuration<br>- Sink implementation for Feast Feature Store<br>- Basic testing and validation |
+| Phase 2a | Weeks 3-4 | Vertex AI Feature Store | - Sink implementation for Vertex AI<br>- Comprehensive testing<br>- Performance initial benchmarking |
+| Phase 2b | Weeks 5-6 | Tecton Feature Store | - Detailed sink handler development<br>- Enrichment handler initial implementation<br>- Integration testing |
+| Phase 3a | Weeks 7-8 | Pinecone Vector Database | - Sink handler implementation<br>- Performance optimization<br>- Comprehensive testing |
+| Phase 3b | Weeks 9-10 | Amazon SageMaker | - Sink and enrichment handler development<br>- Integration and compatibility testing<br>- Performance tuning |
+| Final Phase | Weeks 11-12 | Documentation & Final Refinement | - Comprehensive documentation<br>- Final performance benchmarking<br>- Prepare for upstream contribution |
 
-### Implementation Phases
+### Expected Outcomes
+1. Fully implemented sinks for priority vector databases and feature stores
+2. Comprehensive test coverage
+3. Performance benchmarking
+4. Detailed documentation
+5. Potential upstream contribution to Apache Beam
 
-Phase 1:
-- Communicate with the mentor for additional info
-- Complete the sink implementation of Vertex AI and Feast
-- Test the code with existing code guidelines and implementation
+### Potential Challenges
+1. API compatibility across different platforms
+2. Performance overhead management
+3. Handling diverse integration requirements
 
-Phase 2:
-- Complete the sink and enrichment handler for Pinecone and Tecton
-- Test the code for SageMaker integration
+### Personal Commitment
+- 35-40 hours per week dedicated to project
+- Regular communication with mentors
+- Transparent development process
 
-Phase 3:
-- Document the changes
-- If time is available, start working on Chroma integration
+### Conclusion
+This project will significantly enhance Apache Beam's capabilities in vector database and feature store integrations, providing developers with powerful, flexible tools for advanced data processing and machine learning workflows.
 
-## Timeline and Commitments
-I will dedicate 40-45 hours per week to the project:
-- Weekdays: 6-7 hours per day
-- Weekends: Additional hours for complex tasks
-- Regular communication with mentors during their working hours
-
-## Post-Project Sustainability
-Commitments beyond the initial project:
-- Expand support for additional vector databases
-- Implement real-time feature update capabilities
-- Create comprehensive example pipelines
-- Foster community adoption and contributions
-- Maintain ongoing documentation and support
-
-## Expected Outcomes
-- Native Apache Beam support for vector database operations
-- Streamlined feature store integrations
-- Improved machine learning workflow efficiency
-- Significant open-source contribution to the Apache Beam ecosystem
-
-## Communication Plan
-- Primary communication via Slack and email
-- Regular updates on dev mailing list
-- Weekly sync-ups with mentors
-- Active participation in community discussions
-- Prompt response to code review feedback
+### Community Engagement
+- Active participation in Apache Beam community channels
+- Open-source contribution
+- Transparent development process
