@@ -45,6 +45,28 @@ This project aims to develop Apache Beam I/O connectors for various feature stor
 
 ---
 
+## **Deliverables**  
+
+1. **Implementation of I/O Connectors**  
+   - Develop and test **Feast Feature Store Sink Connector**.  
+   - Implement **Vertex AI Feature Store Sink Connector** with integration testing.  
+   - Develop **Tecton Feature Store Source & Sink Connectors** with enrichment handlers.  
+   - Implement **Pinecone Vector Database Source & Sink Connectors** optimized for high-dimensional data.  
+   - Build **Amazon SageMaker Feature Store Source & Sink Connectors** ensuring Beam API compatibility.  
+
+2. **Testing & Performance Optimization**  
+   - Unit and integration testing for each connector with **end-to-end validation**.  
+   - **Benchmarking and performance profiling** to ensure efficiency in data transfer.  
+   - **Scalability testing** for large-scale ML workflows.  
+
+3. **Documentation & Community Contribution**  
+   - Comprehensive **developer documentation** for usage, API references, and best practices.  
+   - **Code samples and example pipelines** for real-world ML workflows.  
+   - **Regular updates and feedback sessions** with the Apache Beam community.  
+   - **Final project report** detailing implementation, testing, and learnings.  
+
+---
+
 ## **Project Timeline**  
 
 | **Phase**       | **Weeks**  | **Focus Area**                                      | **Tasks**  |
