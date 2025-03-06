@@ -1,6 +1,3 @@
-Here's your improved version:  
-
----
 
 # **GSoC 2024 Project Proposal**  
 
