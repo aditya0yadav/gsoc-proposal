@@ -15,7 +15,7 @@
 - **Degree**: Bachelor's in Data Science and Mathematics  
 - **Expected Graduation**: 2026  
 
-### Brief Bio 
+### Brief Bio
 I am Aditya Yadav, a self-driven Software Engineer and open-source contributor, currently a student at IIT Madras specializing in Machine Learning and Data Science. As a Software Engineer Intern at AcutusAI, I have worked on AI-driven solutions, optimized survey platforms, and developed scalable synthetic data generation systems. I actively contribute to open-source projects like Apache Airflow, ZooKeeper, and Maven, improving workflow automation and system efficiency. With expertise in Python, JavaScript, and cloud infrastructure, I focus on building high-performance applications. I am dedicated to driving innovation in open-source development and AI technologies.
 
 ---
