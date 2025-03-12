@@ -25,7 +25,7 @@ I am Aditya Yadav, a self-driven Software Engineer and open-source contributor, 
   - Conducted comprehensive performance benchmarking between Rust and C++ implementations
   - Analyzed trade-offs between memory safety and performance in system programming
   - Examined real-world industry case studies and implementation strategies
-  - GitHub Repository: [https://github.com/aditya0yadav/](https://github.com/aditya0yadav/)
+  - **Research Paper**:(https://www.researchgate.net/publication/389282759_Rust_vs_C_Performance_Analyzing_Safe_and_Unsafe_Implementations_in_System_Programming)
 
 ---
 
