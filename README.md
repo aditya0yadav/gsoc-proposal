@@ -19,6 +19,14 @@ I am Aditya Yadav, a self-driven Software Engineer and open-source contributor, 
 
 **Apache Beam Experience**: I am currently working on vector embedding integration with OpenAI in Apache Beam, including comprehensive testing implementation. My internship experience provided me hands-on exposure to Beam's architecture and development practices.
 
+### Research Publications
+- **"Rust vs. C++ Performance: Analyzing Safe and Unsafe Implementations in System Programming"** (February 2025)
+  - Top-ranked research paper in the Department of Mathematics at IIT Madras (March 2025)
+  - Conducted comprehensive performance benchmarking between Rust and C++ implementations
+  - Analyzed trade-offs between memory safety and performance in system programming
+  - Examined real-world industry case studies and implementation strategies
+  - GitHub Repository: [https://github.com/aditya0yadav/](https://github.com/aditya0yadav/)
+
 ---
 
 ## **Project Details**  
@@ -119,6 +127,7 @@ This project aims to develop Apache Beam I/O connectors for various feature stor
 - **Distributed Computing**: Stream & Batch Processing  
 - **Vector Database Optimization**: High-dimensional data handling
 - **API Development & Data Engineering**  
+- **System Programming**: Experience with performance analysis of Rust and C++ implementations
 
 ---
 
@@ -127,6 +136,7 @@ This project aims to develop Apache Beam I/O connectors for various feature stor
 - Ensure **scalability, efficiency, and compatibility** across ML feature stores.  
 - Implement **modular, well-tested, and performance-optimized** connectors.  
 - Design with **extensibility** in mind for future feature store/vector database additions.
+- Apply **benchmarking methodologies** from my research experience to evaluate connector performance.
 
 ---
 
