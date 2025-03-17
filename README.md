@@ -91,6 +91,8 @@ According to recent surveys, over 60% of ML projects now incorporate vector data
   - Proper handling of vector dimensions and metadata
   - Utilization of Pinecone's bulk import API for large datasets
 
+888
+
 **Tecton Feature Store Connectors:**
 - **Source Connector**: Enable retrieval of real-time features with:
   - Integration with Tecton's feature retrieval API
