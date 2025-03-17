@@ -78,6 +78,8 @@ According to recent surveys, over 60% of ML projects now incorporate vector data
 - Include comprehensive error handling and retry mechanisms
 - Ensure thread safety for concurrent operations
 
+  ![Screenshot 2025-03-17 at 5 48 46 AM](https://github.com/user-attachments/assets/f601164b-2d69-4edc-9e91-8ec288f0069b)
+  
 **Pinecone Vector Database Connectors:**
 - **Source Connector**: Implement efficient retrieval of embeddings from Pinecone indexes with the following capabilities:
   - Query-based filtering of vectors based on metadata
@@ -91,7 +93,8 @@ According to recent surveys, over 60% of ML projects now incorporate vector data
   - Proper handling of vector dimensions and metadata
   - Utilization of Pinecone's bulk import API for large datasets
 
-888
+![Screenshot 2025-03-17 at 5 50 03 AM](https://github.com/user-attachments/assets/070f4eba-d46d-4bc3-9933-f540d92cd458)
+
 
 **Tecton Feature Store Connectors:**
 - **Source Connector**: Enable retrieval of real-time features with:
@@ -105,6 +108,10 @@ According to recent surveys, over 60% of ML projects now incorporate vector data
   - API-based ingestion into Tecton feature stores
   - Support for feature versioning and metadata
   - Validation of feature values against Tecton schemas
+    
+![Screenshot 2025-03-17 at 5 50 35 AM](https://github.com/user-attachments/assets/dc851811-01bb-41d9-816b-efdec8241cf8)
+
+
 
 **Feast Feature Store Sink Connector:**
 - Complete the existing implementation with:
