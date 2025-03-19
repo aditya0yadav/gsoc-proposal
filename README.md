@@ -1,4 +1,4 @@
-# **GSoC 2024 Project Proposal**
+# **GSoC 2025 Project Proposal**
 
 ## **Enhancing Apache Beam with I/O Connectors for Feature Stores and Vector Databases**
 
