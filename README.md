@@ -123,7 +123,6 @@ According to recent surveys, over 60% of ML projects now incorporate vector data
 
 **Vertex AI Feature Store Sink Connector:**
 - Finalize the implementation with:
-  - Integration with Google Cloud authentication
   - Support for Vertex AI's feature hierarchy and organization
   - Proper handling of online/offline feature synchronization
   - Optimization for Google Cloud environments
