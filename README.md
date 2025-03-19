@@ -13,6 +13,7 @@ This project will develop critical Apache Beam I/O connectors for feature stores
 - **Phone**: +91-8920735656
 - **Location**: New Delhi, India
 - **GitHub**: [https://github.com/aditya0yadav/](https://github.com/aditya0yadav/)
+- **Linkedin** [https://www.linkedin.com/in/2580aditya/](https://www.linkedin.com/in/2580aditya/)
 
 ### **Student Affiliation**
 - **University**: Indian Institute of Technology Madras
