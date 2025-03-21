@@ -25,7 +25,7 @@ I am a software engineer and open-source contributor with 8 months of internship
 
 - Currently implementing vector embeddings with OpenAI API in Apache Beam, including comprehensive testing
 - Developing a production RAG-based project using Pinecone vector database and feature stores
-- Completing 5 freelance projects involving ML pipelines and data engineering
+- Completing 5+ freelance projects involving web development with mern and python
 - Submitting multiple PRs to open-source projects in Python and Java in apache airflow , zookeeper and 
 - Researching system programming performance (published paper comparing Rust vs. C++)
 
