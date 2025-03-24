@@ -1,3 +1,9 @@
+
+![download (2)](https://github.com/user-attachments/assets/aed5d421-59ab-45d7-9226-a4ca4499b48d)
+
+
+![image](https://github.com/user-attachments/assets/e0a6f44b-167e-49ae-ab8e-18ed4e7854f3)
+
 # **GSoC 2025 Project Proposal**
 
 ## **Enhancing Apache Beam with I/O Connectors for Feature Stores and Vector Databases**
