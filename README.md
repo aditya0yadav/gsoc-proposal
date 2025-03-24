@@ -145,8 +145,6 @@ According to recent surveys, over 60% of ML projects now incorporate vector data
 ### **2. Related Work**
 This project builds upon and complements existing work in the Apache Beam ecosystem:
 
-- **Existing Beam ML Connectors**: The project will follow patterns established by existing ML connectors like those for TensorFlow and PyTorch, ensuring consistency in the Beam ecosystem.
-
 - **Vector Database Integrations**: While initial work exists for some feature stores, complete source and sink implementations are missing. This project fills those gaps.
 
 - **Pinecone Integration Specifics**: Pinecone supports operations like upsert which are ideal for streaming pipelines. The connector will leverage these capabilities to enable live embedding updates without pipeline interruption. Existing Python clients will serve as reference implementations.
@@ -165,20 +163,29 @@ Performance optimization will be a core focus, drawing on my experience benchmar
 - **Benchmarking Framework**: Develop a consistent benchmarking approach to measure and improve performance
 
 ## **Implementation Plan**
-
 ### **1. Timeline**
 | **Week** | **Focus Area** | **Specific Tasks** | **Deliverables** |
 |----------|---------------|-------------------|------------------|
-| 1-2 | **Setup & Feast Implementation** | - Study existing Feast connector code<br>- Implement missing Feast Sink functionality<br>- Write unit tests | - Functional Feast Sink connector<br>- Test suite for Feast<br>- Design doc for remaining work |
-| 3-4 | **Vertex AI Implementation** | - Implement Vertex AI Sink connector<br>- Write integration tests<br>- Performance testing | - Functional Vertex AI Sink connector<br>- Test suite for Vertex AI<br>- Performance benchmarks |
-| 5-6 | **Pinecone Source Connector** | - Design Pinecone Source connector<br>- Implement core functionality<br>- Support similarity search queries<br>- Develop test suite | - Functional Pinecone Source connector<br>- Unit and integration tests<br>- Example pipeline |
-| 7-8 | **Pinecone Sink Connector** | - Design Pinecone Sink connector<br>- Implement batch and streaming modes<br>- Optimize for high-dimensional vectors<br>- Performance testing | - Functional Pinecone Sink connector<br>- Batch and streaming examples<br>- Performance benchmarks |
-| 9-10 | **Tecton Source Connector** | - Study Tecton API<br>- Design Source connector architecture<br>- Implement feature retrieval<br>- Handle metadata and time travel | - Functional Tecton Source connector<br>- Test suite<br>- Documentation |
-| 11-12 | **Tecton Sink Connector** | - Design Sink connector<br>- Implement feature ingestion<br>- Handle validation and schemas<br>- Performance optimization | - Functional Tecton Sink connector<br>- Complete test suite<br>- Performance benchmarks |
-| 13-14 | **Documentation & Polish** | - Write comprehensive docs<br>- Create example notebooks<br>- Address feedback<br>- Final optimization | - User and API documentation<br>- Example notebooks<br>- Final PRs ready for review |
+| 1-2 | **Project Setup & Initial Learning** | - Onboarding and deep dive into Apache Beam architecture<br>- Study existing connector implementations<br>- Set up development environment<br>- Initial project planning with mentor<br>- Begin preliminary research on Feast connector | - Development environment configured<br>- Initial project design document<br>- Preliminary understanding of Feast connector architecture |
+| 3-4 | **Feast Implementation** | - Continue studying existing Feast connector code<br>- Implement missing Feast Sink functionality<br>- Begin writing unit tests<br>- Regular check-ins with mentor | - Initial draft of Feast Sink connector<br>- Partial test suite for Feast<br>- Detailed design document for remaining work |
+| 5-6 | **Vertex AI Implementation** | - Implement Vertex AI Sink connector<br>- Write integration tests<br>- Initial performance testing<br>- Refine based on mentor feedback | - Functional Vertex AI Sink connector<br>- Preliminary test suite for Vertex AI<br>- Initial performance benchmarks |
+| 7-8 | **Pinecone Source Connector** | - Design Pinecone Source connector<br>- Implement core functionality<br>- Develop initial test suite<br>- Validate approach with mentor | - Initial Pinecone Source connector<br>- Preliminary unit and integration tests<br>- Example pipeline draft |
+| 9-10 | **Pinecone Sink Connector** | - Design Pinecone Sink connector<br>- Implement batch and streaming modes<br>- Begin optimization for high-dimensional vectors<br>- Comprehensive testing | - Functional Pinecone Sink connector<br>- Batch and streaming mode implementations<br>- Preliminary performance benchmarks |
+| 11-12 | **Tecton Source Connector** | - Deep dive into Tecton API<br>- Design Source connector architecture<br>- Implement feature retrieval mechanism<br>- Handle metadata and time travel queries | - Functional Tecton Source connector<br>- Comprehensive test suite<br>- Detailed implementation documentation |
+| 13-14 | **Final Integration & Polish** | - Finalize all connectors<br>- Comprehensive documentation<br>- Create example notebooks<br>- Address any remaining feedback<br>- Final performance optimization | - Complete user and API documentation<br>- Fully integrated example notebooks<br>- Final pull requests ready for review<br>- Comprehensive performance report |
 
-*Note: This timeline includes buffer time for unexpected challenges and mentor feedback cycles.*
+*Note: This timeline provides extra buffer time for learning, unexpected challenges, and mentor feedback cycles, recognizing that initial weeks may progress more slowly as understanding deepens.*
+### **Adjustments from Previous Timeline**
+- Condensed from 14 to 12 weeks
+- Merged some development phases
+- Maintained core project objectives
+- Simplified task descriptions
+- Kept focus on key deliverables
 
+### **Risk Mitigation**
+- Prioritized core connector implementations
+- Allowed for potential scope adjustments
+- Maintained flexibility in later weeks for unexpected challenges
 ### **2. Success Metrics**
 Each connector will be considered complete when it meets these metrics:
 
