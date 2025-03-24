@@ -6,7 +6,7 @@
 This project will develop critical Apache Beam I/O connectors for feature stores and vector databases—specifically Pinecone, Tecton, Feast, and Vertex AI—enabling seamless machine learning workflows within the Beam ecosystem. As an contributor i am already implementing vector embeddings with OpenAI in Apache Beam and having hands-on experience with these technologies, I will deliver production-ready connectors that address a significant gap in Beam's ML capabilities, benefiting thousands of engineers building RAG-based and other ML applications.
 
 ### **Acknowledgment**
-I would like to sincerely thank Danny McCormick for his valuable guidance in helping me understand the project requirements and expectations. His insights have enabled me to develop a more comprehensive and well-structured proposal.
+I would like to sincerely thank Mentor Danny McCormick for his valuable guidance in helping me understand the project requirements and expectations. His insights have enabled me to develop a more comprehensive and well-structured proposal.
 
 ## **Personal Information**
 
