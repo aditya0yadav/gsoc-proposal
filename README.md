@@ -39,6 +39,7 @@ I would like to sincerely thank Mentor Danny McCormick for his valuable guidance
 I am a software engineer and open-source contributor with 8 months of internship experience focused on Python, machine learning, and Apache Beam development and Apache Airflow. My experience specifically includes:
 
 - Currently implementing vector embeddings with OpenAI API in Apache Beam, including comprehensive testing
+- OpenAI API vector Embedding branch : [OpenAI API vector Embedding branch]( https://github.com/apache/beam/commit/2d49324d12caf55aeb0341327dfc1b0c2c4c8a33)
 - Developing a production RAG-based project using Pinecone vector database and feature stores
 - Completing 5+ freelance projects involving web development with mern and python
 - Submitting multiple PRs to open-source projects in Python and Java in apache airflow , zookeeper and 
